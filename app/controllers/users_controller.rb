@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.new
+    @diaries = Diary.new
   end
   def create
     @users = User.new(params_users)
@@ -20,4 +20,5 @@ class UsersController < ApplicationController
 
   def params_users
     params.require(:user).permit(:category_id, :feeling_id)
+  end
 end
