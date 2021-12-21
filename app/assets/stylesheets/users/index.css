@@ -1,0 +1,35 @@
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe9a7;
+  opacity: 0.4;
+  z-index: -1;
+}
+.ZigZag {
+  background-image:  linear-gradient(135deg, #ffc107 25%, transparent 25%), linear-gradient(225deg, #ffc107 25%, transparent 25%), linear-gradient(45deg, #ffc107 25%, transparent 25%), linear-gradient(315deg, #ffc107 25%, #ffe9a7 25%);
+  background-position:  20px 0, 20px 0, 0 0, 0 0;
+  background-size: 40px 40px;
+  background-repeat: repeat;
+}
+
+
+.top-message{
+  text-align: center;
+}
+
+.title span{
+  color: #fff;
+  position: relative;
+  font-size: 118px;
+}
+.title span::after {
+  content:attr(data-text);
+  text-shadow: 3px 0 0 #000, 0 3px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  color: #fff;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
