@@ -8,18 +8,18 @@
         <span data-text="HOMETAI">HOMETAI</span>
       </div>
 
-      <%= form_with model: "#" local: true do |f|%>
+      <%= form_with model: @user, url: users_path, local: true do |f|%>
         <div class="form-group">
           <div class="set">
             <p class="my-3">今日の頑張ったこと</p>
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control form-control-lg", id:"home-category"}) %>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-category"}) %>
           </div>
           <div class="set">
             <p class="my-3">今の気分</p>
-            <%= f.collection_select(:feel_id, Feel.all, :id, :name, {}, {class:"form-control form-control-lg", id:"home-feel"}) %>
+            <%= f.collection_select(:feeling_id, Feeling.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-feel"}) %>
           </div>
           <div class="bottons">
-            <%= f.submit "ログインして進む", class:"btn", name:"for-login" %>
+            <%= f.submit "ログインして進む", class:"btn", name:"login" %>
             <%= f.submit "ログインなしで進む", class:"btn", name:"no-login" %>
           </div>
         </div>
