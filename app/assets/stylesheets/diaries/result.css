@@ -14,22 +14,3 @@
   background-size: 40px 40px;
   background-repeat: repeat;
 }
-
-
-.top-message{
-  text-align: center;
-}
-
-.title span{
-  color: #fff;
-  position: relative;
-  font-size: 118px;
-}
-.title span::after {
-  content:attr(data-text);
-  text-shadow: 3px 0 0 #000, 0 3px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
-  color: #fff;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
