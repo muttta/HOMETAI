@@ -1,16 +1,207 @@
-.bg_pattern {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffe9a7;
-  opacity: 0.4;
+.top-messages {
+  align-items: center;
+}
+header {
+  margin-bottom: 48px;
+  padding: 20px 0;
+}
+.inner {
+  width: 30vw;
+  position: relative;
+  background-color: #fff;
+  margin-left: 15px;
+  padding: 15px 15px 5px 30px;
+}
+.nav {
+  align-items: center;
+}
+.nav-left{
+  margin: 15px auto 10px auto;
+}
+.left_nav {
+  font-size: 5vw;
+  border-bottom: solid #212529;
+}
+.nav_right {
+  font-size: 2vw;
+}
+.nav_btn{
+  display: inline;
+}
+.messages {
+  align-items: center;
+  padding: auto;
+  margin-bottom: 48px;
+}
+.first-messages {
+  background-color: #fff;
+  min-height: 25vh;
+  max-width: 60vw;
+  margin: auto;
+  margin-bottom: 30px;
+  border: solid #000;
+  position: relative;
+}
+.first-messages:before {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  content: '';
   z-index: -1;
 }
-.ZigZag {
-  background-image:  linear-gradient(135deg, #ffc107 25%, transparent 25%), linear-gradient(225deg, #ffc107 25%, transparent 25%), linear-gradient(45deg, #ffc107 25%, transparent 25%), linear-gradient(315deg, #ffc107 25%, #ffe9a7 25%);
-  background-position:  20px 0, 20px 0, 0 0, 0 0;
-  background-size: 40px 40px;
-  background-repeat: repeat;
+.message {
+  margin-top: 60px;
+  font-size: 2vw;
 }
+.message-content {
+  text-align: center;
+}
+.message-title {
+  font-size: 7vw;
+  text-align: center;
+}
+
+/*褒め言葉出力部分*/
+.secand-messages {
+  
+  display: flex;
+  flex-direction: column;
+}
+.set-word {
+  flex: 1;
+  overflow-y: auto;
+}
+.text {
+  background-color: #fff;
+  text-align: center;
+  margin: 0 0 0 40px ;
+  width: 480px;
+  position: relative;
+}
+.set {
+  font-size: 3vw;
+}
+/*ボタン部分*/
+.btn,
+a.btn,
+button.btn {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn-border-shadow {
+  padding: calc(1.5rem - 12px) 3rem 1.5rem;
+
+  background: #fff;
+}
+.btn-border-shadow:before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  border: 3px solid #000;
+  border-radius: 0.5rem;
+}
+
+.btn-border-shadow:hover {
+  padding: calc(1.5rem - 6px) 3rem;
+}
+
+.btn-border-shadow:hover:before {
+  top: 0;
+  left: 0;
+}
+/*吹き出し部分*/
+.left:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  left: 23px;
+  bottom: -20px;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid #ffffff;
+  border-right: 20px solid #ffffff;
+  border-top: 20px solid transparent;
+}
+.left:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  left: 40px;
+  bottom: -20px;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid #ffe9a7;
+  border-right: 20px solid #ffe9a7;;
+  border-top: 20px solid transparent;
+}
+.right {
+  margin: auto 15px auto auto;
+  width: 480px;
+}
+.right:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  right: 23px;
+  bottom: -20px;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid #ffffff;
+  border-right: 20px solid #ffffff;
+  border-top: 20px solid transparent;
+} 
+.right:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  right: 40px;
+  bottom: -22px;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid #ffe9a7;
+  border-right: 20px solid #ffe9a7;
+  border-top: 20px solid transparent;
+}
+
+

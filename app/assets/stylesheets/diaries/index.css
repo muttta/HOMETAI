@@ -1,3 +1,4 @@
+
 .bg_pattern {
   position: fixed;
   top: 0;
@@ -5,33 +6,50 @@
   width: 100vw;
   height: 100vh;
   background-color: #ffe9a7;
-  opacity: 0.4;
-  z-index: -1;
+  background: rgba(255, 255, 255, 0.8);
 }
 .ZigZag {
-  background-image:  linear-gradient(135deg, #ffc107 25%, transparent 25%), linear-gradient(225deg, #ffc107 25%, transparent 25%), linear-gradient(45deg, #ffc107 25%, transparent 25%), linear-gradient(315deg, #ffc107 25%, #ffe9a7 25%);
+  background-image:  linear-gradient(135deg, #ffdb70fb 25%, transparent 25%), linear-gradient(225deg, #ffdb70fb 25%, transparent 25%), linear-gradient(45deg, #ffdb70fb 25%, transparent 25%), linear-gradient(315deg, #ffdb70fb 25%, #ffe9a7 25%);
   background-position:  20px 0, 20px 0, 0 0, 0 0;
   background-size: 40px 40px;
   background-repeat: repeat;
+  z-index: -1;
 }
-
-
-.top-message{
-  text-align: center;
+/*トップ見出し*/
+.top-messages {
+  align-items: center;
+  margin: auto;
 }
-
-.title span{
-  color: #fff;
+.title-wrap {
+  max-width: 70%;
+  padding-top: 15px;
+  margin: 120px auto 50px auto;
   position: relative;
-  font-size: 118px;
-  text-shadow: 3px 0 0 #000, 0 3px 0 #000, 3px 0 0 #000, 0 3px 0 #000;
 }
-.title span::after {
-  content:attr(data-text);
-  text-shadow: 3px 0 0 #000, 0 3px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
-  color: #fff;
+.title {
+  font-size: 10vw;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  position: relative;
+  border: solid #000;
+}
+.title::before {
   position: absolute;
-  left: 0px;
-  top: 0px;
-  mix-blend-mode: color;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  content: '';
+  z-index: -1;
 }
+
+.HOMETAI{
+  border-bottom: solid #000;
+  width: fit-content;
+  margin: auto;
+}
+/*フォーム*/
+
+/*ボタン*/
+

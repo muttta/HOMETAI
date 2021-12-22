@@ -2,29 +2,40 @@
   <div class="container-fluid">
 
 
-    <div class="top-message mt-5">
+    <div class="top-message ">
+      <div class="top-inner">
 
-      <div class="title">
-        <span data-text="HOMETAI">HOMETAI</span>
-      </div>
-
-      <%= form_with model: @diaries, url: diaries_result_path,local: true do |f|%>
-        <div class="form-group">
-          <div class="set">
-            <p class="my-3">今日の頑張ったこと</p>
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-category"}) %>
-          </div>
-          <div class="set">
-            <p class="my-3">今の気分</p>
-            <%= f.collection_select(:feeling_id, Feeling.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-feel"}) %>
-          </div>
-          <div class="bottons">
-            <%= f.submit "ログインして進む", class:"btn", name:"login" %>
-            <%= f.submit "ログインなしで進む", class:"btn", name:"no-login" %>
+        <div class="title-wrap text-center">
+          <div class="title">
+           <h1 class="HOMETAI">HOMETAI</h1>
           </div>
         </div>
-      <% end %>
 
+        <div class="top-form">
+          <%= form_with model: @diaries, url: diaries_result_path,local: true do |f|%>
+
+            <div class="form-group text-center">
+
+              <div class="set">
+                <p class="my-3">今日の頑張ったこと</p>
+                <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-category"}) %>
+              </div>
+
+              <div class="set">
+                 <p class="my-3">今の気分</p>
+                 <%= f.collection_select(:feeling_id, Feeling.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-feel"}) %>
+              </div>
+
+                <%= f.submit "ログインして進む", class:"btn btn-border-shadownav_btn", name:"login" %>
+                <%= f.submit "ログインなしで進む", class:"btn btn-border-shadownav_btn", name:"no-login" %>
+
+
+            </div>
+
+          <% end %>
+        </div>
+
+      </div>
     </div>
 
 
