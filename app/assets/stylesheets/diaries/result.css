@@ -2,7 +2,6 @@
   align-items: center;
 }
 header {
-  margin-bottom: 48px;
   padding: 20px 0;
 }
 .inner {
@@ -71,18 +70,24 @@ header {
   flex-direction: column;
 }
 .set-word {
+  margin: auto 10px auto 10px;
   flex: 1;
   overflow-y: auto;
 }
 .text {
   background-color: #fff;
+  border-radius: 10px;
   text-align: center;
-  margin: 0 0 0 40px ;
-  width: 480px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 40vw;
   position: relative;
 }
 .set {
-  font-size: 3vw;
+  font-size: 2vw;
+  font-weight: bold;
 }
 /*ボタン部分*/
 .btn,
@@ -139,6 +144,9 @@ button.btn {
   left: 0;
 }
 /*吹き出し部分*/
+.left {
+  margin-left: 40px;
+}
 .left:before {
   content: '';
   position: absolute;
@@ -170,8 +178,7 @@ button.btn {
   border-top: 20px solid transparent;
 }
 .right {
-  margin: auto 15px auto auto;
-  width: 480px;
+  margin: 0 40px 0 auto;
 }
 .right:before {
   content: '';
@@ -197,7 +204,7 @@ button.btn {
   border-radius: 50%;
   transform: rotate(45deg);
   right: 40px;
-  bottom: -22px;
+  bottom: -20px;
   border-left: 20px solid transparent;
   border-bottom: 20px solid #ffe9a7;
   border-right: 20px solid #ffe9a7;

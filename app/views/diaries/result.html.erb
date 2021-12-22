@@ -10,8 +10,8 @@
         <div class="nav_right">
           <ul>
           <%#= if user_signed_in? %>
-            <li class ="nav_btn ">マイページ<%#= link_to 'マイページ', "#", class: "mypage" %></li> 
-            <li class ="nav_btn">ログアウト<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+            <li class ="nav_btn ">ログイン<%#= link_to 'マイページ', "#", class: "mypage" %></li> 
+            <li class ="nav_btn">新規登録<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
           <%# else %>
             <%#<li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %>
             <%#<li class="list-inline-item"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
@@ -44,67 +44,51 @@
     </div>
 
   <div class="secand-messages center-block">
-        
-    <% pick_num = rand(0..10),5 %>
-    <% num1 = pick_num[0] %>
-    <% num2 = pick_num[1] %>
-    <% num3 = pick_num[2] %>
-    <% num4 = pick_num[3] %>
-    <% num5 = pick_num[4] %>
-
     <div class="set-word text-center">
-      <div class="text left">
-        <%#= @diary.feel_id == 2%>
-        <span class="set">
-          <p>wordtest</p>
-          <%# message1 = Word.find([num1])%>
-            <%# message1.each do |message| %>
-           <%#= message.name %>
-          <%# end %>  
-        </span>
-      </div>
-      <div class="text right">
-        <%#= @diary.feel_id == 2%>
-        <div class="set">
-          <p>wordtest</p>
-          <%# message1 = Word.find([num1])%>
-            <%# message1.each do |message| %>
-            <%#= message.name %>
-          <%# end %>  
-        </div>
-      </div>
-      <div class="text left">
-        <%#= @diary.feel_id == 2%>
-        <div class="set">
-          <p>wordtest</p>
-          <%# message1 = Word.find([num1])%>
-            <%# message1.each do |message| %>
-           <%#= message.name %>
-          <%# end %>  
-        </div>
-      </div>
-      <div class="text right">
-        <%#= @diary.feel_id == 2%>
-        <div class="set">
-          <p>wordtest</p>
-          <%# message1 = Word.find([num1])%>
-            <%# message1.each do |message| %>
-           <%#= message.name %>
-          <%# end %>  
-        </div>
-      </div>
-      <div class="text left">
-      <%#= @diary.feel_id == 2%>
-        <div class="set">
-          <p>wordtest</p>
-          <%# message1 = Word.find([num1])%>
-            <%# message1.each do |message| %>
-           <%#= message.name %>
-          <%# end %>  
-        </div>
-      </div>
-    </div>
+        <div class="text-fild">
 
+        <div class="text left">
+          <div class="set">
+            <% @message1.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text right">
+          <div class="set">
+            <% @message2.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text left">
+          <div class="set">
+            <% @message3.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text right">
+          <div class="set">
+            <% @message4.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text left">
+          <div class="set">
+            <% @message5.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+        
+        </div>
+    </div>
   </div>
     
 </div>
