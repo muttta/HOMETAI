@@ -1,0 +1,95 @@
+<div class="container">
+<div class="bg_pattern ZigZag top-messages">
+
+  <header class="header">
+    <div class="inner left">
+      <div class="nav">
+        <div class="nav_left">
+          <h1 class="left_nav">HOMETAI</h1>
+        </div>
+        <div class="nav_right">
+          <ul>
+          <%#= if user_signed_in? %>
+            <li class ="nav_btn ">ログイン<%#= link_to 'マイページ', "#", class: "mypage" %></li> 
+            <li class ="nav_btn">新規登録<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <%# else %>
+            <%#<li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%#<li class="list-inline-item"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+          <%# end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <div class="messages text-center">
+      <%#= if user_signed_in? %>
+      <div class="first-messages pt-2 pr-2 py-4 pl-2">
+        <div class="message-title ">
+          <h1 >お疲れ様です</h1>
+        </div>
+        <div class="message">
+          <div class="message-content">
+            <p>test<br>text</p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <%= link_to 'カレンダーに保存', "#", class: " btn btn-border-shadow" %>
+      </div>
+      <%# else %>
+      <%#<div class="first-messages">
+      </div>
+      <%# end %>
+    </div>
+
+  <div class="secand-messages center-block">
+    <div class="set-word text-center">
+        <div class="text-fild">
+
+        <div class="text left">
+          <div class="set">
+            <% @message1.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text right">
+          <div class="set">
+            <% @message2.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text left">
+          <div class="set">
+            <% @message3.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text right">
+          <div class="set">
+            <% @message4.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+
+        <div class="text left">
+          <div class="set">
+            <% @message5.each do |message| %>
+              <%= message.name %>
+            <% end %>  
+          </div>
+        </div>
+        
+        </div>
+    </div>
+  </div>
+    
+</div>
+</div>

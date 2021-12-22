@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root to:"diaries#index"
+  post '/diaries/result', to: 'diaries#result'
+  resources :diaries, only:[:index, :new, :create, :save]
 end
