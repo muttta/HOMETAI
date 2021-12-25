@@ -1,0 +1,29 @@
+.top-messages {
+  align-items: center;
+}
+header {
+  padding: 20px 0;
+}
+.inner {
+  width: 30vw;
+  position: relative;
+  background-color: #fff;
+  margin-left: 15px;
+  padding: 15px 15px 5px 30px;
+}
+.nav {
+  align-items: center;
+}
+.nav-left{
+  margin: 15px auto 10px auto;
+}
+.left_nav {
+  font-size: 5vw;
+  border-bottom: solid #212529;
+}
+.nav_right {
+  font-size: 2vw;
+}
+.nav_btn{
+  display: inline;
+}

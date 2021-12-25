@@ -6,5 +6,5 @@ class CalendarsController < ApplicationController
   end
   def create
   end
-  
+
 end

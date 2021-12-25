@@ -1,0 +1,73 @@
+<div class="container">
+<div class="bg_pattern ZigZag top-messages">
+
+  <header class="header">
+    <div class="inner left">
+      <div class="nav">
+        <div class="nav_left">
+          <h1 class="left_nav">HOMETAI</h1>
+        </div>
+        <div class="nav_right">
+          <ul>
+          <%#= if user_signed_in? %>
+            <li class ="nav_btn ">ログイン<%#= link_to 'マイページ', "#", class: "mypage" %></li> 
+            <li class ="nav_btn">新規登録<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <%# else %>
+            <%#<li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%#<li class="list-inline-item"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+          <%# end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="calendar-page col-md-10">
+
+        <div class="bg-white">
+
+          <div class="form-title mt-3">
+            <h3 class="diary-title">Diary</h3>
+          </div>
+
+          <div class=" justify-content-center mt-4 pt-3 form-inline">
+            <div class="col-md-10 mr-3">
+              <%= form_with model: @diaries, url: diaries_result_path,local: true do |f|%>
+
+              <div class="form-group form-inline">
+
+                <div class="set">
+                  <span class="my-3">頑張ったこと</span>
+                  <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"user-category"}) %>
+                </div>
+
+                <div class="set">
+                   <span class="my-3 ml-3">今の気分</span>
+                   <%= f.collection_select(:feeling_id, Feeling.all, :id, :name, {}, {class:"form-control", id:"user-feel"}) %>
+                </div>
+              </div>
+
+                <div class="set">
+                   <p class="my-3">一言メモ</p>
+                   <%= f.text_field :coment, class:"form-control", size:"50"%>
+                </div>
+
+                <%= f.submit "保存", class:"btn btn-border-shadownav_btn", name:"login" %>            
+               <% end %>
+
+            </div>
+          </div>
+        </div>
+
+  <div class="bg-white mt-3">
+    <%= month_calendar do |date| %>
+      <%= date.day %>
+    <% end %>
+  </div>
+
+</div>
+</div>
+
+</div>
+</div>
