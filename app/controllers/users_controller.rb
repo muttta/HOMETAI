@@ -1,10 +1,22 @@
 class UsersController < ApplicationController
 
   def index
-    @diaries = Diary.all
+    @diary = Diary.new
   end
-  def show
-  
+  def new
+    @user = current_user.id
+    @diaries = Diary.all
+
+    @events = []
+
+    @diaries.each do |diary|
+      if diary.user_id == 2
+        @events << diary
+      end
+    end
+
+
+    @diary = Diary.new
   end
 
 end

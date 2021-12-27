@@ -19,11 +19,13 @@ class DiariesController < ApplicationController
   end
 
   def create
-    @diaries = Diary.create(pasams_diaries)
-    if @diaries.save
-    redirect_to controller: :users, action: :index
+    @diaries = Diary.new(pasams_diaries)
+    if @diaries.valid?
+      @diaries.save
+      redirect_to controller: :users, action: :new
     else
-      render :create
+      @diary = @diaries
+      render "users/index"
     end
   end
 
