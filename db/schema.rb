@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_12_27_065533) do
 
-  create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "diary_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["diary_id"], name: "index_calendars_on_diary_id"
-    t.index ["user_id"], name: "index_calendars_on_user_id"
-  end
-
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
     t.integer "category_id", null: false

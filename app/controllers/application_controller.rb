@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :birthday, :email] )
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:nickname, :birthday] )
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:nickname] )
   end
   def after_sign_in_path_for(resource)
-    calendars_path
+    users_path
   end
 end
