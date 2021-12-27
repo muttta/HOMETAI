@@ -7,17 +7,12 @@
         <div class="nav_left">
           <h1 class="left_nav">HOMETAI</h1>
         </div>
+        <ul>
         <div class="nav_right">
-          <ul>
-          <%#= if user_signed_in? %>
-            <li class ="nav_btn ">ログイン<%#= link_to 'マイページ', "#", class: "mypage" %></li> 
-            <li class ="nav_btn">新規登録<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <%# else %>
-            <%#<li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %>
-            <%#<li class="list-inline-item"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
-          <%# end %>
-          </ul>
+            <%#= link_to 'マイページ', "#", class: "mypage" %>
+            <li class="nav_btn"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         </div>
+        </ul>
       </div>
     </div>
   </header>

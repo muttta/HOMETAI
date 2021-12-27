@@ -9,13 +9,13 @@
         </div>
         <div class="nav_right">
           <ul>
-          <%#= if user_signed_in? %>
-            <li class ="nav_btn "><%= link_to 'カレンダー', calendars_path, class: "calender" %></li> 
-            <li class ="nav_btn">新規登録<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-          <%# else %>
-            <%#<li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %>
-            <%#<li class="list-inline-item"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
-          <%# end %>
+          <% if user_signed_in? %>
+            <li class ="nav_btn "><%= link_to 'カレンダー', users_path, class: "users-page" %></li> 
+            <li class ="nav_btn"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+          <% else %>
+            <li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+            <li class="list-inline-item"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+          <% end %>
           </ul>
         </div>
       </div>
@@ -23,7 +23,6 @@
   </header>
 
     <div class="messages text-center">
-      <%#= if user_signed_in? %>
       <div class="first-messages pt-2 pr-2 py-4 pl-2">
         <div class="message-title ">
           <h1 >お疲れ様です</h1>
@@ -34,14 +33,16 @@
           </div>
         </div>
       </div>
+
+      <% if user_signed_in? %>
       <div class="btn-wrap">
-        <%= link_to 'カレンダーに保存', diaries_path, class: " btn btn-border-shadow" %>
+        <%= link_to 'カレンダーに保存', users_path, class: " btn btn-border-shadow" %>
       </div> 
-      <%# else %>
-      <%#<div class="first-messages">
+      <% else %>
+      <div class="btn-wrap">
+        <%= link_to 'ログインしてカレンダーへ保存', new_user_session_path, class: " btn btn-border-shadow" %>
       </div>
-      <%# end %>
-    </div>
+      <% end %>
 
   <div class="secand-messages center-block">
     <div class="set-word text-center">

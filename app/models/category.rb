@@ -10,6 +10,5 @@ class Category < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :diaries
-  has_many :calendars
   
 end

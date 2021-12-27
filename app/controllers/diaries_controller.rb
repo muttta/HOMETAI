@@ -5,7 +5,7 @@ class DiariesController < ApplicationController
   def result
     @diaries = Diary.new(params_diaries)
     if params[:login]
-      render "index"
+      render "devise/sessions/new"
     else
     @diaries = Diary.new(params_diaries)
       random_num
