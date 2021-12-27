@@ -10,7 +10,7 @@
         <div class="nav_right">
           <ul>
           <%#= if user_signed_in? %>
-            <li class ="nav_btn ">ログイン<%#= link_to 'マイページ', "#", class: "mypage" %></li> 
+            <li class ="nav_btn "><%= link_to 'カレンダー', calendars_path, class: "calender" %></li> 
             <li class ="nav_btn">新規登録<%#= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
           <%# else %>
             <%#<li class="list-inline-item"><%= link_to 'ログイン', new_user_session_path, class: "login" %>
@@ -35,8 +35,8 @@
         </div>
       </div>
       <div class="btn-wrap">
-        <%= link_to 'カレンダーに保存', "#", class: " btn btn-border-shadow" %>
-      </div>
+        <%= link_to 'カレンダーに保存', diaries_path, class: " btn btn-border-shadow" %>
+      </div> 
       <%# else %>
       <%#<div class="first-messages">
       </div>
@@ -86,7 +86,7 @@
             <% end %>  
           </div>
         </div>
-        
+
         </div>
     </div>
   </div>

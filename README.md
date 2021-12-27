@@ -17,7 +17,6 @@
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
-| date                | date       | null: false                    |
 | user                | references | null: false,foreign_key: true  |
 | diary               | references | null: false,foreign_key: true  |
 
