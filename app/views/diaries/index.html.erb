@@ -26,8 +26,8 @@
                  <%= f.collection_select(:feeling_id, Feeling.all, :id, :name, {}, {class:"form-control form-control-lg", id:"user-feel"}) %>
               </div>
 
-                <%= f.submit "ログインして進む", class:"btn btn-border-shadownav_btn", name:"login" %>
-                <%= f.submit "ログインなしで進む", class:"btn btn-border-shadownav_btn", name:"no-login" %>
+                <%# f.submit "ログインして進む", class:"btn btn-border-shadownav_btn", name:"login" %>
+                <%= f.submit "OK", class:"btn btn-border-shadownav_btn", name:"no-login" %>
 
 
             </div>

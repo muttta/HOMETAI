@@ -23,7 +23,6 @@
   </header>
 
     <div class="messages text-center">
-      <%#= if user_signed_in? %>
       <div class="first-messages pt-2 pr-2 py-4 pl-2">
         <div class="message-title ">
           <h1 >お疲れ様です</h1>
@@ -34,14 +33,16 @@
           </div>
         </div>
       </div>
+      
+      <% if user_signed_in? %>
       <div class="btn-wrap">
         <%= link_to 'カレンダーに保存', calendars_path, class: " btn btn-border-shadow" %>
       </div> 
-      <%# else %>
-      <%#<div class="first-messages">
+      <% else %>
+      <div class="btn-wrap">
+        <%= link_to 'ログインしてカレンダーへ保存', new_user_session_path, class: " btn btn-border-shadow" %>
       </div>
-      <%# end %>
-    </div>
+      <% end %>
 
   <div class="secand-messages center-block">
     <div class="set-word text-center">
