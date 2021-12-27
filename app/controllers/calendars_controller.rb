@@ -1,10 +1,11 @@
 class CalendarsController < ApplicationController
 
   def index
+    @calendar = Calendar.new
+    @diaries = Diary.all
   end
-  def new
-  end
-  def create
+  def show
+    @diary = Diary.find(params[:id])
   end
 
 end

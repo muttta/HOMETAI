@@ -7,9 +7,29 @@ class DiariesController < ApplicationController
     if params[:login]
       render "index"
     else
-      @diaries = Diary.new(params_diaries)
-      
-      random = Random.new()
+    @diaries = Diary.new(params_diaries)
+      random_num
+      render :result
+    end
+  end
+  def create
+    @diaries = Diary.create(params_diaries)
+    redirect_to root_path
+  end
+
+
+
+
+  private
+
+
+
+  def params_diaries
+    params.require(:diary).permit(:category_id, :feeling_id)
+  end
+
+  def random_num
+    random = Random.new()
       picknum = []
       5.times do
         picknum.push(random.rand(1..11))
@@ -49,16 +69,5 @@ class DiariesController < ApplicationController
           @message4 = Word4.find([num4])
           @message5 = Word4.find([num5])
         end
-      render :result
-
-    end
-  end
-  def create
-  end
-
-  private
-
-  def params_diaries
-    params.require(:diary).permit(:category_id, :feeling_id)
   end
 end
