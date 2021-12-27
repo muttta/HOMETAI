@@ -16,6 +16,9 @@ class DiariesController < ApplicationController
     @diaries = Diary.create(params_diaries)
     redirect_to root_path
   end
+  def show
+    @diary = Diary.find(params[:id])
+  end
 
 
 

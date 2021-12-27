@@ -7,5 +7,4 @@ class CalendarsController < ApplicationController
   def show
     @diary = Diary.find(params[:id])
   end
-
 end
