@@ -2,20 +2,33 @@ class DiariesController < ApplicationController
   def index
     @diaries = Diary.new
   end
+
   def result
-    @diaries = Diary.new(params_diaries)
+    @diaries = Diary.new(pasams_result)
     if params[:login]
       render "devise/sessions/new"
     else
-    @diaries = Diary.new(params_diaries)
+    @diaries = Diary.new(pasams_result)
       random_num
       render :result
     end
   end
-  def create
-    @diaries = Diary.create(params_diaries)
-    redirect_to root_path
+
+  def new
+    @diary = Diary.new
   end
+
+  def create
+    @diaries = Diary.new(pasams_diaries)
+    if @diaries.valid?
+      @diaries.save
+      redirect_to controller: :users, action: :new
+    else
+      @diary = @diaries
+      render "users/index"
+    end
+  end
+
   def show
     @diary = Diary.find(params[:id])
   end
@@ -25,10 +38,12 @@ class DiariesController < ApplicationController
 
   private
 
-
-
-  def params_diaries
+  def pasams_result
     params.require(:diary).permit(:category_id, :feeling_id)
+  end
+
+  def pasams_diaries
+    params.require(:diary).permit(:category_id, :feeling_id, :day, :comment).merge(user_id: current_user.id)
   end
 
   def random_num
