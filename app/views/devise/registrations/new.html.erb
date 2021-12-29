@@ -1,33 +1,71 @@
-<h2>新規登録</h2>
+<div class="container">
+<div class="bg_pattern ZigZag top-messages">
+
+  <header class="header">
+    <div class="inner left">
+      <div class="nav">
+        <div class="nav_left">
+          <h1 class="left_nav">HOMETAI</h1>
+        </div>
+        <div class="nav_right">
+          <h5>新規登録</h5>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "ニックネーム" %>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_field :birthday, autofocus: true, autocomplete: "誕生日" %>
-  </div>
-   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="bg-white pt-3 pr-3 pl-3 py-3 first-messages font-weight-bold mt-3">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ニックネーム</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) home太郎", maxlength:"40" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">メールアドレス</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label classs="form-text">誕生日</label>
+        </div>
+        <%= f.date_field :birthday, autofocus: true, autocomplete: "誕生日" %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+        <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード(確認)</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+      </div>
+
+    </div>
+    
+    <div class="text-center">
+    <div class="btn-wrap btn btn-border-shadow">
+      <%= f.submit "新規登録", class:"btn font-weight-bold", name:"保存" %>
+    </div>
+    </div>
+  <% end %>
+
+</div>
+</div>
