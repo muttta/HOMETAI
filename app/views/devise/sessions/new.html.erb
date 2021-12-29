@@ -1,30 +1,51 @@
-<h2>ログイン</h2>
+<div class="container">
+<div class="bg_pattern ZigZag top-messages">
 
-<%= form_with model:@user, url: user_session_path, class: 'registration-main', local: true do |f| %>
-  
-  <div class='login-flash-message'>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
-
-  <div class="field">
-    <div class='form-text-wrap'>
-      <label class="form-text">ニックネーム</label>
-      <span class="indispensable">必須</span>
+  <header class="header">
+    <div class="inner left">
+      <div class="nav">
+        <div class="nav_left">
+          <h1 class="left_nav">HOMETAI</h1>
+        </div>
+        <div class="nav_right">
+          <h5>新規登録</h5>
+        </div>
+      </div>
     </div>
-    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"" %>
-  </div>
+  </header>
 
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">パスワード</label>
-      <span class="indispensable">必須</span>
+  <%= form_with model:@user, url: user_session_path, class: 'registration-main', local: true do |f| %>
+    <div class="bg-white pt-3 pr-3 pl-3 py-3 first-messages font-weight-bold mt-3">
+
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+
+      <div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">ニックネーム</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"" %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+      </div>
+
     </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
-  </div>
 
-  <div class='login-btn'>
-    <%= f.submit "ログイン" ,class:"login-red-btn" %>
-  </div>
+    <div class="text-center">
+      <div class="btn-wrap btn btn-border-shadow">
+       <%= f.submit "ログイン", class:"btn font-weight-bold", name:"保存" %>
+      </div>
+    </div>
+  <% end %>
+
 </div>
-<% end %>
+</div>

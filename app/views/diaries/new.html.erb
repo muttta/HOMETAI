@@ -1,0 +1,45 @@
+<div class="bg_pattern ZigZag top-messages">
+<div class="container">
+
+  <%= render "shared/header" %>
+
+  <div class="diary-form">
+    <div class=" text-center mt-4 pt-3">
+      <div class="col-md-10 mr-3">
+
+      <%= form_with model: @diary, url: user_diaries_path(current_user.id),local: true do |f|%>
+      <%= render 'shared/error_messages', model: f.object %>
+              
+        <div class="bg-white pt-3 pr-3 pl-3 py-3 first-messages ">
+
+          <div class="set">
+            <p class="h5">日付</p>
+            <%= f.date_field :day, class:"form-control", class:"form-control", id:"day"%>
+          </div>
+
+          <div class="set mt-3">
+            <span class="h5">頑張ったこと</span>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control", id:"user-category"}) %>
+          </div>
+
+          <div class="set mt-3">
+            <span class="h5">今の気分</span>
+            <%= f.collection_select(:feeling_id, Feeling.all, :id, :name, {}, {class:"form-control", id:"user-feel"}) %>
+          </div>
+
+          <div class="set mt-3">
+            <p class="h5">一言メモ</p>
+            <%= f.text_field :comment, class:"form-control", size:"50"%>
+          </div>
+
+        </div>
+
+        <div class="btn-wrap btn btn-border-shadow font-weight-bold">
+          <%= f.submit "カレンダーに保存する", class:"btn", name:"保存" %>
+        </div>
+
+      <% end %>
+
+      </div>
+    </div>
+  </div>

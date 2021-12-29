@@ -22,10 +22,10 @@ class DiariesController < ApplicationController
     @diaries = Diary.new(pasams_diaries)
     if @diaries.valid?
       @diaries.save
-      redirect_to controller: :users, action: :new
+      redirect_to controller: :users, action: :index
     else
       @diary = @diaries
-      render "users/index"
+      render "diaries/new"
     end
   end
 

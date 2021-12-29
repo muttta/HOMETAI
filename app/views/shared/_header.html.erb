@@ -1,0 +1,15 @@
+  <header class="header">
+    <div class="inner left">
+      <div class="nav">
+        <div class="nav_left">
+          <h1 class="left_nav">HOMETAI</h1>
+        </div>
+        <ul>
+        <div class="nav_right">
+            <%#= link_to 'マイページ', "#", class: "mypage" %>
+            <li class="nav_btn"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </header>
