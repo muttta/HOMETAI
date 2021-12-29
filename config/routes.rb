@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to:"diaries#index"
   post '/diaries/result', to: 'diaries#result'
   
-  resources :users, only:[:index, :new] do 
+  resources :users, only:[:index] do 
     resources :diaries, only:[:index, :new, :create, :show]
   end
 end

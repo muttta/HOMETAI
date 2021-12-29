@@ -23,7 +23,7 @@
   </header>
 
     <div class="messages text-center">
-      <div class="first-messages pt-2 pr-2 py-4 pl-2">
+      <div class="first-messages pt-2 pr-2 py-4 pl-2 bg-white">
         <div class="message-title ">
           <h1 >お疲れ様です</h1>
         </div>
@@ -36,7 +36,7 @@
 
       <% if user_signed_in? %>
       <div class="btn-wrap">
-        <%= link_to 'カレンダーに保存', users_path, class: " btn btn-border-shadow" %>
+        <%= link_to 'カレンダーに保存', new_user_diary_path(current_user.id), class: " btn btn-border-shadow" %>
       </div> 
       <% else %>
       <div class="btn-wrap">
