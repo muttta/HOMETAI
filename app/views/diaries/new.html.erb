@@ -1,7 +1,21 @@
 <div class="bg_pattern ZigZag top-messages">
 <div class="container">
 
-  <%= render "shared/header" %>
+  <header class="header">
+    <div class="inner left">
+      <div class="nav">
+        <div class="nav_left">
+          <h1 class="left_nav">HOMETAI</h1>
+        </div>
+        <ul>
+        <div class="nav_right">
+            <li class="nav_btn"><%= link_to 'カレンダー', users_path%></li>
+            <li class="nav_btn"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </header>
 
   <div class="diary-form">
     <div class=" text-center mt-4 pt-3">

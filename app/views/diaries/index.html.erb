@@ -11,10 +11,21 @@
           </div>
         </div>
 
+  <% unless user_signed_in?%>
+    <div class="nav-bar text-center">
+      <ul>
+        <div class="nav_right">
+          <li class="nav_btn"><%= link_to 'ログイン', new_user_session_path%></li>
+          <li class="nav_btn"><%= link_to '新規登録', new_user_registration_path%></li>
+        </div>
+      </ul>
+    </div>
+  <% end %>
+
         <div class="top-form">
           <%= form_with model: @diaries, url: diaries_result_path,local: true do |f|%>
 
-            <div class="form-group text-center">
+            <div class="form-group text-center my-4">
 
               <div class="set">
                 <p class="my-3">今日の頑張ったこと</p>
