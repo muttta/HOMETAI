@@ -43,7 +43,6 @@ https://docs.google.com/spreadsheets/d/1pKsaUsKW7BcPHCB3LjuH2RhcTsHI08YA6Pgzm6aT
 # 画面遷移図  
 ![画面遷移](https://github.com/muttta/HOMETAI/blob/master/app/assets/images/hometai_views.png)  
 
-
 # 開発環境  
 - フロントエンド：HTML/CSS  
 - バックエンド：Ruby(ver 2.5.1)/Ruby on rails(6.0.0)  
