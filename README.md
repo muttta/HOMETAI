@@ -24,8 +24,14 @@
 https://docs.google.com/spreadsheets/d/1pKsaUsKW7BcPHCB3LjuH2RhcTsHI08YA6Pgzm6aTRkQ/edit#gid=982722306
 ## 実装した機能についての画像やGIFおよびその説明   
 - フォーム入力後褒め言葉が出力される  
-- ログイン後、ユーザーカレンダーを表示する  
+https://gyazo.com/85de3c3d46fe7c3688ecd9c33c120557
+- ログイン後、頑張ったことを保存する画面へ遷移する  
+https://gyazo.com/1d1227465c440e99527949932dbdd1ac
+- ログインしたユーザーはユーザーカレンダーを確認することができる  
+https://gyazo.com/58216e79e8e9a8e5e46ef9e58adc1e59
 - 頑張ったことを保存するとカレンダーの該当日付欄に⭐️マークが出現する  
+https://gyazo.com/0ce108bb3caa51f6c0072469f2a8aef9
+
 
 
 ## 実装予定の機能 
