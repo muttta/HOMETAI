@@ -3,7 +3,7 @@
 # アプリケーション概要  
 
 ## URL  
-
+ https://hometai.herokuapp.com
 ## テスト用アカウント  
 - ニックネーム：test-4
 - パスワード：444ddd  
