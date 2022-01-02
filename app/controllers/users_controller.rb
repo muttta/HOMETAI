@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @diary = Diary.new
     @user = current_user.id
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
         @events << diary
       end
     end
-
   end
 
 end
