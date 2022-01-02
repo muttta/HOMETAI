@@ -27,20 +27,20 @@
         <div class="message-title ">
           <h1 >お疲れ様です</h1>
         </div>
-        <div class="message">
+       <%#<div class="message">
           <div class="message-content">
             <p>test<br>text</p>
           </div>
-        </div>
+        </div>%>
       </div>
 
       <% if user_signed_in? %>
       <div class="btn-wrap">
-        <%= link_to 'カレンダーに保存', new_user_diary_path(current_user.id), class: " btn btn-border-shadow" %>
+        <%= link_to 'カレンダーに移動', new_user_diary_path(current_user.id), class: " btn btn-border-shadow" %>
       </div> 
       <% else %>
       <div class="btn-wrap">
-        <%= link_to 'ログインしてカレンダーへ保存', new_user_session_path, class: " btn btn-border-shadow" %>
+        <%= link_to 'ログインしてカレンダーへ移動', new_user_session_path, class: " btn btn-border-shadow" %>
       </div>
       <% end %>
 

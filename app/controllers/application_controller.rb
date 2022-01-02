@@ -5,12 +5,13 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if current_user
       flash[:notice] = "ログインに成功しました"
-      new_user_diary_path(current_user.id)
+      users_path(current_user.id)
     else
       flash[:notice] = "新規登録画面に移動します"
       new_user_session
     end
   end
+
   
   private
 
