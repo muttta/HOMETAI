@@ -3,7 +3,11 @@
 # アプリケーション概要  
 
 ## URL  
- https://hometai.herokuapp.com
+ https://hometai.herokuapp.com  
+ Basic認証  
+ - ID：admin  
+ - Pass：2222
+
 ## テスト用アカウント  
 - ニックネーム：test-4
 - パスワード：444ddd  
